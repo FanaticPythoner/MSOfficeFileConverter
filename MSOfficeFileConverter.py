@@ -23,8 +23,7 @@ officeProgramAndVersionsFound = []
 
 def _createRegKeys():
     """
-    Create DWORD values to registry allowing the module
-    to create macros into microsoft office documents.
+    Create DWORD values to registry allowing the module\nto create macros into microsoft office documents.\n\n*Do not use it, there is an underscore for a reason.
     """
     def subkeys(path, hkey=HKEY_LOCAL_MACHINE, flags=0):
         """
@@ -99,7 +98,7 @@ Currently support the export in the following formats:
         self.defaultExportPath = '\\'.join(splittedPath[:-1])
 
     def _export(self, macro, finalExportPath):
-        """Internal magic function."""
+        """Internal magic function.\n\n*Do not use it, there is an underscore for a reason."""
         word = win32com.client.Dispatch("Word.Application")
         word.Visible = False
         document = word.Documents.Open(self.documentPath)
@@ -111,7 +110,7 @@ Currently support the export in the following formats:
         del word
 
     def _validateArgs(self, exportFolder, exportFileName):
-        """Validate the args of an export function."""
+        """Validate the args of an export function.\n\n*Do not use it, there is an underscore for a reason."""
         if exportFolder is None:
             exportFolder = self.defaultExportPath
         elif not os.path.isdir(exportFolder):
