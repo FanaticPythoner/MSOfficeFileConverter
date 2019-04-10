@@ -70,7 +70,7 @@ Currently support the export in the following formats:
 
  
  
-*Usage :*
+*Usage / Code sample :*
 
 #Creating the WordDocument object
 
