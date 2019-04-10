@@ -3,8 +3,11 @@ Allow you to convert/export a Microsoft Office file to a specified format, witho
 
 *Language:* Tested in Python 3.6, should work in all Python 3 version.
 
-*Limitations:* - For now, the version in development only support Windows.
-             - Only work for Word. I am planning in implementing Excel and PowerPoint in the following days.
+*Limitations:* 
+
+- For now, the version in development only support Windows.
+               
+- Only work for Word. I am planning in implementing Excel and PowerPoint in the following days.
 
 
 
@@ -15,43 +18,43 @@ Open as Word document from a specified file path, then offer methods to convert 
 
 Currently support the export in the following formats:
 
-    - Docx
+- Docx
     
-    - Docx (Strict Open XML Document)
+- Docx (Strict Open XML Document)
     
-    - Docm
+- Docm
     
-    - Doc
+- Doc
     
-    - Dotm
+- Dotm
     
-    - Dot
+- Dot
     
-    - Pdf
+- Pdf
     
-    - Xps
+- Xps
     
-    - Mht
+- Mht
     
-    - Mthml
+- Mthml
     
-    - Html
+- Html
     
-    - Html (Filtered)
+- Html (Filtered)
     
-    - Htm
+- Htm
     
-    - Rtf
+- Rtf
     
-    - Txt
+- Txt
     
-    - Xml
+- Xml
     
-    - Xml (Macro Enabled)
+- Xml (Macro Enabled)
     
-    - Xml (2003)
+- Xml (2003)
     
-    - Odt
+- Odt
 
  
  
