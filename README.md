@@ -68,7 +68,6 @@ Currently support the export in the following formats:
     
 - Odt
 
- 
  
 ### Usage / Code sample : ###
 
