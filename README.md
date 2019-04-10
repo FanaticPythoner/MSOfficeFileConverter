@@ -1,7 +1,9 @@
 # MSOfficeFileConverter
 Allow you to convert/export a Microsoft Office file to a specified format, without any other dependency. You only need the Microsoft Office program you want to convert from (EX. You need Word if you want to convert a .docx to .pdf).
 
-*Language:* Tested in Python 3.6, should work in all Python 3 version.
+*Language:* 
+
+- Tested in Python 3.6, should work in all Python 3 version.
 
 *Limitations:* 
 
