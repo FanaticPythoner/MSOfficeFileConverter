@@ -71,10 +71,10 @@ Currently support the export in the following formats:
  
 ### Usage / Code sample : ###
 
-#Creating the WordDocument object
+#*Creating the WordDocument object*
 
 document = WordDocument('Example\\Path\\To\\file.docx')
 
-#Exporting to PDF
+#*Exporting to PDF*
 
 document.toPdf('Example\\Export\\Path','ExampleFileName')
