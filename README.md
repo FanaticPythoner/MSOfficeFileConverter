@@ -77,4 +77,4 @@ document = WordDocument('Example\\Path\\To\\file.docx')
 
 #*Exporting to PDF*
 
-document.toPdf('Example\\Export\\Path','ExampleFileName')
+document.toPdf('Example\\Export\\Path','OutputFileName')
