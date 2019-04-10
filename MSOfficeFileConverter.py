@@ -1,3 +1,6 @@
+# Autor : FanaticPythoner.
+# Please read the "License Agreement.txt" file before doing anything.
+
 from winreg import *
 import itertools
 from contextlib import contextmanager
@@ -18,7 +21,7 @@ allSupportedMSProgram = ['Excel', 'PowerPoint', 'Word']
 allSupportedMSProgramExe = ['excel.exe','powerpnt.exe','winword.exe']
 officeProgramAndVersionsFound = []
 
-def _createRegKeys2():
+def _createRegKeys():
     """
     Create DWORD values to registry allowing the module
     to create macros into microsoft office documents.
@@ -89,7 +92,7 @@ Currently support the export in the following formats:
     def __init__(self, documentPath):
         if not os.path.isfile(documentPath):
             raise Exception('The specified file path does not exist.')
-        _createRegKeys2()
+        _createRegKeys()
         self.documentPath = documentPath
         splittedPath = documentPath.split('\\')
         self.fileName = '.'.join(splittedPath[-1].split('.')[:-1])
