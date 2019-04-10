@@ -3,11 +3,11 @@ Allow you to convert/export a Microsoft Office file to a specified format, witho
 
 That being said, if the "save as" function of a Microsoft Office software work, MSOfficeFileConverter will work. That is the exact reason why I made this library : Alternatives to export, for example, a Word document to PDF are generally buggy, bad, or damn expensive. MSOfficeFileConverter is free, extremely simple, and just work.
 
-*Language:* 
+### Language: ### 
 
 - Tested in Python 3.6, should work in all Python 3 version.
 
-*Limitations:* 
+### Limitations: ###
 
 - For now, the version in development only support Windows.
                
@@ -25,7 +25,7 @@ That being said, if the "save as" function of a Microsoft Office software work, 
 
 # WordDocument Class
 
-*Description :*
+### Description : ###
 Open a Word document from a specified file path, then offer methods to convert it to whatever format you want.
 
 Currently support the export in the following formats:
@@ -70,7 +70,7 @@ Currently support the export in the following formats:
 
  
  
-*Usage / Code sample :*
+### Usage / Code sample : ###
 
 #Creating the WordDocument object
 
