@@ -1,5 +1,7 @@
 # MSOfficeFileConverter
-Allow you to convert/export a Microsoft Office file to a specified format, without any other dependency. You only need the Microsoft Office program you want to convert from (EX. You need Word if you want to convert a .docx to .pdf).
+Allow you to convert/export a Microsoft Office file to a specified format, without any other dependency. My code use the build-in function of Microsoft Office to export any Word/Excel/PowerPoint document. The only thing you need is the Microsoft Office program you want to convert from (EX. You need Word if you want to convert a .docx to .pdf).
+
+That being said, if the "save as" function of a Microsoft Office software work, MSOfficeFileConverter will work. That is the exact reason why I made this library : Alternatives to export, for example, a Word document to PDF are generally buggy, bad, or damn expensive. MSOfficeFileConverter is free, extremely simple, and just work.
 
 *Language:* 
 
@@ -11,6 +13,14 @@ Allow you to convert/export a Microsoft Office file to a specified format, witho
                
 - Only work for Word. I am planning in implementing Excel and PowerPoint in the following days.
 
+
+# Installation
+
+- Download the repository
+
+- Install the requirements in the requirements.txt file (pip install -r requirements.txt)
+
+- Use the sample code below *Usage* in the *WordDocument* class below as an example. Enjoy.
 
 
 # WordDocument Class
