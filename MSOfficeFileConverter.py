@@ -1,5 +1,3 @@
-#import win32api
-#import win32con
 from winreg import *
 import itertools
 from contextlib import contextmanager
