@@ -11,7 +11,7 @@ That being said, if the "save as" function of a Microsoft Office software work, 
 
 - For now, MSOfficeFileConverter only work on Windows.
                
-- Only work for Word. I am planning to implement Excel and PowerPoint in the following days.
+- For now, only work for Word. I am planning to implement Excel and PowerPoint in the following days.
 
 
 # Installation
