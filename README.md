@@ -26,7 +26,7 @@ That being said, if the "save as" function of a Microsoft Office software work, 
 # WordDocument Class
 
 *Description :*
-Open as Word document from a specified file path, then offer methods to convert it to whatever format you want.
+Open a Word document from a specified file path, then offer methods to convert it to whatever format you want.
 
 Currently support the export in the following formats:
 
