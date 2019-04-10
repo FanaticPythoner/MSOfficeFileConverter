@@ -70,6 +70,7 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
+from MSOfficeFileConverter import WordDocument
 
 #*Creating the WordDocument object*
 
