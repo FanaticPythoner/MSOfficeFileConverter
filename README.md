@@ -20,7 +20,7 @@ That being said, if the "save as" function of a Microsoft Office software work, 
 
 - Install the requirements in the requirements.txt file (pip install -r requirements.txt)
 
-- Use the sample code below *Usage* in the *WordDocument* class below as an example. Enjoy.
+- Use the sample code below [*Usage / Code Sample*](https://github.com/FanaticPythoner/MSOfficeFileConverter#usage--code-sample-) in the [*WordDocument*](https://github.com/FanaticPythoner/MSOfficeFileConverter#worddocument-class) class below as an example. Enjoy.
 
 
 # WordDocument Class
