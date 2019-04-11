@@ -60,7 +60,7 @@ def _createRegKeys():
 
 
 class WordDocument:
-    """Open as Word document from a specified file path, then offer methods to convert it to whatever format you want.
+    """Open a Word document from a specified file path, then offer methods to convert it to whatever format you want.
 
 Usage:
     #Creating the WordDocument object
@@ -286,7 +286,49 @@ Currently support the export in the following formats:
         finalExportPath = exportFolder + '\\' + exportFileName
         self._export(finalExportPath,23)
 
+
 class ExcelDocument:
+    """Open a Excel document from a specified file path, then offer methods to convert it to whatever format you want.
+
+Usage:
+    #Creating the ExcelDocument object
+    document = ExcelDocument('Example\\Path\\To\\file.docx')
+    #Exporting to PDF
+    document.toPdf('Example\\Export\\Path','ExampleFileName')
+
+Currently support the export in the following formats:
+    - Xlsx
+    - Xlsm
+    - Xlsb
+    - Xls
+    - Xml (Data)
+    - Mht
+    - Mhtml
+    - Xltx
+    - Xltm
+    - Xlt
+    - Txt (Windows)
+    - Txt (Macintosh)
+    - Txt (Unicode)
+    - Txt (MSDOS)
+    - Csv (UTF-8)
+    - Csv (Windows)
+    - Csv (Macintosh)
+    - Csv (Unicode)
+    - Csv (MSDOS)
+    - Xml (Spreadsheet 2003)
+    - Xls (Excel 5.0/95 Workbook)
+    - Prn
+    - Dif
+    - Slk
+    - Xlam
+    - Xla
+    - Pdf
+    - Xps
+    - Xlsx (Strict Open XML Spreadsheet)
+    - Ods
+    """
+
     def __init__(self, documentPath):
         if not os.path.isfile(documentPath):
             raise Exception('The specified file path does not exist.')
