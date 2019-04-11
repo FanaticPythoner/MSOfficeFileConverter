@@ -19,11 +19,10 @@ def suppress(*exceptions):
 
 allSupportedMSProgram = ['Excel', 'PowerPoint', 'Word']
 allSupportedMSProgramExe = ['excel.exe','powerpnt.exe','winword.exe']
-officeProgramAndVersionsFound = []
 
 def _createRegKeys():
     """
-    Create DWORD values to registry allowing the module\nto create macros into microsoft office documents.\n\n*Do not use it, there is an underscore for a reason.
+    Create DWORD values to registry allowing the module\nto create macros into Microsoft Office documents.\n\n*Do not use it, there is an underscore for a reason.
     """
     def subkeys(path, hkey=HKEY_LOCAL_MACHINE, flags=0):
         """
@@ -33,7 +32,7 @@ def _createRegKeys():
             for i in itertools.count():
                 yield EnumKey(k, i)
 
-    def get_version_number (filename):
+    def get_version_number(filename):
         """Get the version of a file"""
         try:
             info = GetFileVersionInfo (filename, "\\")
@@ -51,7 +50,6 @@ def _createRegKeys():
             filePath = QueryValueEx(subKey, 'Path')
             version = get_version_number(filePath[0] + '\\' + key)
             version = str(version[0]) + '.' + str(version[1])
-            officeProgramAndVersionsFound.append((version, key))
             writePath = "Software\\Microsoft\\Office\\" + version
             officeProductName = allSupportedMSProgram[allSupportedMSProgramExe.index(key.lower())]
             writeKey = OpenKey(HKEY_CURRENT_USER, writePath + '\\' + officeProductName + '\\Security', 0, KEY_ALL_ACCESS)
@@ -292,7 +290,7 @@ class ExcelDocument:
 
 Usage:
     #Creating the ExcelDocument object
-    document = ExcelDocument('Example\\Path\\To\\file.docx')
+    document = ExcelDocument('Example\\Path\\To\\file.xlsx')
     #Exporting to PDF
     document.toPdf('Example\\Export\\Path','ExampleFileName')
 
