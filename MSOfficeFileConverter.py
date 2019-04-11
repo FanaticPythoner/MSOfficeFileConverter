@@ -22,7 +22,7 @@ allSupportedMSProgramExe = ['excel.exe','powerpnt.exe','winword.exe']
 
 def _createRegKeys():
     """
-    Create DWORD values to registry allowing the module\nto create macros into Microsoft Office documents.\n\n*Do not use it, there is an underscore for a reason.
+    Create DWORD values to registry allowing the module\nto use macros in Microsoft Office documents without Microsoft annoying prompts / block.\n\n*Do not use it, there is an underscore for a reason.
     """
     def subkeys(path, hkey=HKEY_LOCAL_MACHINE, flags=0):
         """
