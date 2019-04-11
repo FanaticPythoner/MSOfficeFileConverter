@@ -11,7 +11,7 @@ That being said, if the "save as" function of a Microsoft Office software work, 
 
 - For now, MSOfficeFileConverter only work on Windows.
                
-- For now, only work for Word. I am planning to implement Excel and PowerPoint in the following days.
+- For now, only work for Word and Excel. I am planning to implement PowerPoint in the following days.
 
 
 # Installation
@@ -75,6 +75,86 @@ from MSOfficeFileConverter import WordDocument
 #*Creating the WordDocument object*
 
 document = WordDocument('Example\\Path\\To\\file.docx')
+
+#*Exporting to PDF*
+
+document.toPdf('Example\\Export\\Path','OutputFileName')
+
+
+# ExcelDocument Class
+
+### Description : ###
+Open an Excel document from a specified file path, then offer methods to convert it to whatever format you want.
+
+Currently support the export in the following formats:
+
+- Xlsx
+
+- Xlsm
+
+- Xlsb
+
+- Xls
+
+- Xml (Data)
+
+- Mht
+
+- Mhtml
+
+- Xltx
+
+- Xltm
+
+- Xlt
+
+- Txt (Windows)
+
+- Txt (Macintosh)
+
+- Txt (Unicode)
+
+- Txt (MSDOS)
+
+- Csv (UTF-8)
+
+- Csv (Windows)
+
+- Csv (Macintosh)
+
+- Csv (Unicode)
+
+- Csv (MSDOS)
+
+- Xml (Spreadsheet 2003)
+
+- Xls (Excel 5.0/95 Workbook)
+
+- Prn
+
+- Dif
+
+- Slk
+
+- Xlam
+
+- Xla
+
+- Pdf
+
+- Xps
+
+- Xlsx (Strict Open XML Spreadsheet)
+
+- Ods
+
+ 
+### Usage / Code sample : ###
+from MSOfficeFileConverter import ExcelDocument
+
+#*Creating the ExcelDocument object*
+
+document = ExcelDocument('Example\\Path\\To\\file.xlsx')
 
 #*Exporting to PDF*
 
