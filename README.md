@@ -70,10 +70,8 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
-*This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code.*
+*#### This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code. ####*
 
- 
- 
 from MSOfficeFileConverter import WordDocument
 
 document = WordDocument('Example\\Path\\To\\file.docx')
@@ -150,9 +148,7 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
-*This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code.*
-
- 
+*#### This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code. ####*
 
 from MSOfficeFileConverter import ExcelDocument
 
