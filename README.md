@@ -71,13 +71,11 @@ Currently support the export in the following formats:
  
 ### Usage / Code sample : ###
 *#### This example create a WordDocument object then convert it to PDF. Takes 3 lines of code. ####*
-
+```python
 from MSOfficeFileConverter import WordDocument
-
 document = WordDocument('Example\\Path\\To\\file.docx')
-
 document.toPdf('Example\\Export\\Path','OutputFileName')
-
+```
 
 # ExcelDocument Class
 
@@ -149,9 +147,8 @@ Currently support the export in the following formats:
  
 ### Usage / Code sample : ###
 *#### This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code. ####*
-
+```python
 from MSOfficeFileConverter import ExcelDocument
-
 document = ExcelDocument('Example\\Path\\To\\file.xlsx')
-
 document.toPdf('Example\\Export\\Path','OutputFileName')
+```
