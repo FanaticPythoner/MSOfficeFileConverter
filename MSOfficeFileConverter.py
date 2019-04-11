@@ -459,14 +459,6 @@ class ExcelDocument:
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 42)
 
-    #def toXml_Spreadsheet2003(self, exportFolder=None, exportFileName=None):
-    #    """Export to XML Spreadsheet 2003.
-    #    - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
-    #    - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-    #    exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-    #    finalExportPath = exportFolder + '\\' + exportFileName
-    #    self._exportAll(finalExportPath, 52)
-
     def toXls_95Workbook(self, exportFolder=None, exportFileName=None):
         """Export to Excel 5.0/95 Workbook.
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
