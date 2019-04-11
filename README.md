@@ -160,7 +160,7 @@ document = ExcelDocument('Example\\Path\\To\\file.xlsx')
 document.toPdf('Example\\Export\\Path','OutputFileName')
 ```
 
-*#### This example create an ExcelDocument object then convert in batch all sheets to CSV. All the CSV files are stored in a new folder named CSV_Files_{FileNameOutput.csv}. Takes 3 lines of code. ####*
+*#### This example create an ExcelDocument object then convert in batch all sheets to CSV. All the CSV files are stored in a new folder named CSV_Files_files.xlsx: The output folder path then changes to 'Example\\Export\\Path\\CSV_Files_files.xlsx'. Takes 3 lines of code. ####*
 ```python
 from MSOfficeFileConverter import ExcelDocument
 document = ExcelDocument('Example\\Path\\To\\file.xlsx')
