@@ -70,7 +70,7 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
-*#### This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code. ####*
+*#### This example create a WordDocument object then convert it to PDF. Takes 3 lines of code. ####*
 
 from MSOfficeFileConverter import WordDocument
 
