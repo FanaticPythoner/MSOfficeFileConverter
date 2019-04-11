@@ -1,9 +1,0 @@
-Sub export()
-ActiveDocument.SaveAs2 FileName:="", _ 
-FileFormat:= 
-Dim deletepath As String
-deletepath = ActiveDocument.FullName
-ActiveDocument.Close False
-Kill (deletepath)
-Application.Quit
-End Sub
