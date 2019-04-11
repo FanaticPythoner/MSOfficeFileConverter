@@ -87,6 +87,7 @@ Currently support the export in the following formats:
     - Xml (2003)
     - Odt"""
     def __init__(self, documentPath):
+        documentPath = os.path.abspath(documentPath)
         if not os.path.isfile(documentPath):
             raise Exception('The specified file path does not exist.')
         _createRegKeys()
@@ -328,6 +329,7 @@ Currently support the export in the following formats:
     """
 
     def __init__(self, documentPath):
+        documentPath = os.path.abspath(documentPath)
         if not os.path.isfile(documentPath):
             raise Exception('The specified file path does not exist.')
         _createRegKeys()
