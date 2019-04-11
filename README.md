@@ -77,14 +77,14 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
-*#### This example create a WordDocument object then convert it to PDF. Notice that we didn't specify the PDF file extension in the second parameter, and the file name output is still 'OutputFileName.pdf'. The result would be the same if the second parameter was 'OutputFileName.pdf'. Takes 3 lines of code. ####*
+*This example create a WordDocument object then convert it to PDF. Notice that we didn't specify the PDF file extension in the second parameter, and the file name output is still 'OutputFileName.pdf'. The result would be the same if the second parameter was 'OutputFileName.pdf'.*
 ```python
 from MSOfficeFileConverter import WordDocument
 document = WordDocument('Example\\Path\\To\\file.docx')
 document.toPdf('Example\\Export\\Path','OutputFileName')
 ```
 
-*#### This example create a WordDocument object then convert it to PDF. Notice that we didn't specify anything in the toPdf() method. Doing that will force the WordDocument instance to export the file in the same directory as the original Word file (here 'Example\\Path\\To') and with the same name as the original Word file, except with the destination extension (here 'OutputFileName.pdf'). Takes 3 lines of code. ####*
+*This example create a WordDocument object then convert it to PDF. Notice that we didn't specify anything in the toPdf() method. Doing that will force the WordDocument instance to export the file in the same directory as the original Word file (here 'Example\\Path\\To') and with the same name as the original Word file, except with the destination extension (here 'OutputFileName.pdf').*
 ```python
 from MSOfficeFileConverter import WordDocument
 document = WordDocument('Example\\Path\\To\\file.docx')
@@ -160,14 +160,14 @@ Currently support the export in the following formats:
 
  
 ### Usage / Code sample : ###
-*#### This example create an ExcelDocument object then convert it to PDF. Takes 3 lines of code. ####*
+*This example create an ExcelDocument object then convert it to PDF.*
 ```python
 from MSOfficeFileConverter import ExcelDocument
 document = ExcelDocument('Example\\Path\\To\\file.xlsx')
 document.toPdf('Example\\Export\\Path','OutputFileName.pdf')
 ```
 
-*#### This example create an ExcelDocument object then convert in batch all sheets to CSV. All the CSV files are stored in a new folder named CSV_Files_file.xlsx: The output folder path then changes to 'Example\\Export\\Path\\CSV_Files_file.xlsx'. Takes 3 lines of code. ####*
+*This example create an ExcelDocument object then convert in batch all sheets to CSV. All the CSV files are stored in a new folder named CSV_Files_file.xlsx: The output folder path then changes to 'Example\\Export\\Path\\CSV_Files_file.xlsx'.*
 ```python
 from MSOfficeFileConverter import ExcelDocument
 document = ExcelDocument('Example\\Path\\To\\file.xlsx')
