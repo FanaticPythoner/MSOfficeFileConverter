@@ -13,6 +13,13 @@ That being said, if the "save as" function of a Microsoft Office software work, 
                
 - For now, only work for Word and Excel. I am planning to implement PowerPoint in the following days.
 
+### Table of Contents: ###
+
+- Classes
+  
+  - [*WordDocument*](https://github.com/FanaticPythoner/MSOfficeFileConverter#worddocument-class)
+  
+  - [*ExcelDocument*](https://github.com/FanaticPythoner/MSOfficeFileConverter#exceldocument-class)
 
 # Installation
 
