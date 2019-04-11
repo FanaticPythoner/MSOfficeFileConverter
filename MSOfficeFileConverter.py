@@ -1,5 +1,5 @@
 # Autor : FanaticPythoner.
-# Please read the "License Agreement.txt" file before doing anything.
+# Please read the "LICENSE" file before doing anything.
 
 from winreg import *
 import itertools
