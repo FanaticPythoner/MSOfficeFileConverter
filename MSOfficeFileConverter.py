@@ -20,9 +20,11 @@ def suppress(*exceptions):
 allSupportedMSProgram = ['Excel', 'PowerPoint', 'Word']
 allSupportedMSProgramExe = ['excel.exe','powerpnt.exe','winword.exe']
 
+defaultIterNumberIfExists = 10000
+
 def _createRegKeys():
     """
-    Create DWORD values to registry allowing the module\nto use macros in Microsoft Office documents without Microsoft annoying prompts / block.\n\n*Do not use it, there is an underscore for a reason.
+    Create DWORD values to registry allowing the module\nto create macros into Microsoft Office documents without Microsoft annoying prompts / block.\n\n*Do not use it, there is an underscore for a reason.
     """
     def subkeys(path, hkey=HKEY_LOCAL_MACHINE, flags=0):
         """
@@ -56,6 +58,18 @@ def _createRegKeys():
             SetValueEx(writeKey, "AccessVBOM", 0, REG_DWORD, 1)
             SetValueEx(writeKey, "VBAWarnings", 0, REG_DWORD, 1)
 
+
+def _multiFilesExportFolder(oldExportFolder, preTreatedExportFolder, exportFileName):
+    exportFolder = oldExportFolder
+
+    if os.path.isdir(oldExportFolder):
+        for i in range(1,defaultIterNumberIfExists):
+            newExportFolder = preTreatedExportFolder + '\\HtmlFiles_' + str(i) + '_' + exportFileName
+            if not os.path.isdir(newExportFolder):
+                exportFolder = newExportFolder
+                break
+
+    return exportFolder
 
 class WordDocument:
     """Open a Word document from a specified file path, then offer methods to convert it to whatever format you want.
@@ -203,8 +217,9 @@ Currently support the export in the following formats:
         """Export to Web Page (*.html).
         - If you do not specify an export folder, the document will be created in the same directory as the original Word directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\HtmlFiles_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\HtmlFiles_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._export(finalExportPath,8)
@@ -213,8 +228,9 @@ Currently support the export in the following formats:
         """Export to Web Page (*.htm).
         - If you do not specify an export folder, the document will be created in the same directory as the original Word directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\HtmFiles_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\HtmFiles_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._export(finalExportPath,8)
@@ -223,8 +239,9 @@ Currently support the export in the following formats:
         """Export to Web Page, Filtered (*.htm; *.html).
         - If you do not specify an export folder, the document will be created in the same directory as the original Word directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\HtmlFilteredFiles_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\HtmlFilteredFiles_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._export(finalExportPath,10)
@@ -435,8 +452,9 @@ Currently support the export in the following formats:
         """Export to CSV UTF-8 (Comma delimited).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\CSV_UTF8_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\CSV_UTF8_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 62)
@@ -485,8 +503,9 @@ Currently support the export in the following formats:
         """Export to Text (Windows).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\TXT_Windows_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\TXT_Windows_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 20)
@@ -495,8 +514,9 @@ Currently support the export in the following formats:
         """Export to Unicode Text.
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\TXT_Unicode_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\TXT_Unicode_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 42)
@@ -513,8 +533,9 @@ Currently support the export in the following formats:
         """Export to CSV (Comma delimited).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\CSV_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\CSV_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 6)
@@ -523,8 +544,9 @@ Currently support the export in the following formats:
         """Export to CSV (Windows).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\CSV_Windows_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\CSV_Windows_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 23)
@@ -533,8 +555,9 @@ Currently support the export in the following formats:
         """Export to Formatted Text (Space delimited).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\PRN_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\PRN_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 36)
@@ -543,8 +566,9 @@ Currently support the export in the following formats:
         """Export to Text (Macintosh).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\TXT_Macintosh_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\TXT_Macintosh_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 19)
@@ -553,8 +577,9 @@ Currently support the export in the following formats:
         """Export to Text (MS-DOS).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\TXT_MSDOS_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\TXT_MSDOS_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 21)
@@ -563,8 +588,9 @@ Currently support the export in the following formats:
         """Export to CSV (Macintosh).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\CSV_Macintosh_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\CSV_Macintosh_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 22)
@@ -573,8 +599,9 @@ Currently support the export in the following formats:
         """Export to CSV (MS-DOS).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\CSV_MSDOS_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\CSV_MSDOS_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 24)
@@ -591,8 +618,9 @@ Currently support the export in the following formats:
         """Export to SYLK (Symbolic Link).
         - If you do not specify an export folder, the document will be created in the same directory as the Excel directory.
         - If you do not specify an export file name, the document will have the same name as the original document, only the extension will change."""
-        exportFolder, exportFileName = self._validateArgs(exportFolder,exportFileName)
-        exportFolder = exportFolder + '\\SLK_Files_' + exportFileName
+        exportFolder1, exportFileName = self._validateArgs(exportFolder,exportFileName)
+        exportFolder = exportFolder1 + '\\SLK_Files_' + exportFileName
+        exportFolder = _multiFilesExportFolder(exportFolder, exportFolder1, exportFileName)
         os.makedirs(exportFolder)
         finalExportPath = exportFolder + '\\' + exportFileName
         self._exportAllSheets(finalExportPath, 2)
